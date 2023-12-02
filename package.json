@@ -6,7 +6,8 @@
   "scripts": {
     "tsc": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node build/index.js"
+    "start": "node build/index.js",
+    "dev": "ts-node-dev src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   "homepage": "https://github.com/CarlosArgelio/typescript-backend#readme",
   "devDependencies": {
     "@types/express": "^4.17.21",
+    "ts-node-dev": "^2.0.0",
     "typescript": "5.3.2"
   },
   "dependencies": {
