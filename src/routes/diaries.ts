@@ -16,7 +16,14 @@ diaryRouter.get('/:id', (_req: Request, res: Response) => {
 })
 
 diaryRouter.post('/', (_req: Request, res: Response) => {
-  res.send('Saving a diary!')
+  const { date, weather, visibility, comment } = _req.body
+  const newDiaryEntry = diaryServices.addDiary({
+    date,
+    weather,
+    visibility,
+    comment
+  })
+  res.send(newDiaryEntry)
 })
 
 export { diaryRouter }
