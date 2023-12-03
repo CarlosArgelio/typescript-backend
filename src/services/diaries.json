@@ -5,5 +5,12 @@
         "weather": "rainy",
         "visibility": "poor",
         "comment": "pretty scary" 
+    },
+    {
+        "id": 2,
+        "date": "2017-01-01",
+        "weather": "rainy",
+        "visibility": "poor",
+        "comment": "pretty scary" 
     }
 ]
