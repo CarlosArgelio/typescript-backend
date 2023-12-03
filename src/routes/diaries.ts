@@ -15,15 +15,15 @@ diaryRouter.get('/:id', (_req: Request, res: Response) => {
     : res.sendStatus(404)
 })
 
-diaryRouter.post('/', (_req: Request, res: Response) => {
-  const { date, weather, visibility, comment } = _req.body
-  const newDiaryEntry = diaryServices.addDiary({
-    date,
-    weather,
-    visibility,
-    comment
-  })
-  res.send(newDiaryEntry)
+diaryRouter.post('/', (req: Request, res: Response) => {
+  try {
+    const newDiaryEntry = toNewDiaryEntry(req.body)
+
+    const addedDiaryEntry = diaryServices.addDiary(newDiaryEntry)
+    res.send(addedDiaryEntry)
+  } catch (error) {
+    res.status(400).send(error.message)
+  }
 })
 
 export { diaryRouter }
